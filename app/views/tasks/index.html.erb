@@ -1,4 +1,6 @@
 <h1>All Tasks</h1>
-<% @tasks.each do |task| %>
-<h5> <%= task.title %></h5>
-<% end %>
+<div class="task"></div>
+  <% @tasks.each do |task| %>
+  <h5> <input type="checkbox"<%= task.completed %></input> <%= task.title %></h5>
+  <% end %>
+</div>
