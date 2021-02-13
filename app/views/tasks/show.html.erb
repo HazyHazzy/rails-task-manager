@@ -1,3 +1,8 @@
 <h2><%= @task.title %></h2>
 <p><%= @task.details %></p>
-<p><% @task.completed %></p>
+<input type="checkbox"><% @task.completed %> </input>
+
+<%= button_to "delete", @task, :method => "delete" %>
+
+
+<p><%= link_to 'Back to List', tasks_path %></p>
