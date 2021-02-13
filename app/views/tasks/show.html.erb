@@ -1,8 +1,16 @@
 <h2><%= @task.title %></h2>
+<%= link_to 'Edit Task', edit_tasks_path %>
 <p><%= @task.details %></p>
-<input type="checkbox"><% @task.completed %> </input>
 
-<%= button_to "delete", @task, :method => "delete" %>
+<% if @task.completed? %>
+      <div><i class="far fa-check-square"></i><span>This task is complete</span></div>
+    <% else %>
+      <div><i class="far fa-square"></i><span>This task has not been completed yet</span></div>
+    <% end %>
+
+
+<%= button_to "Delete", @task, :method => "delete", data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
 
 
 <p><%= link_to 'Back to List', tasks_path %></p>
+
